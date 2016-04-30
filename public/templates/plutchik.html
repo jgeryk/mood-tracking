@@ -1,7 +1,12 @@
     <div ng-controller="formController" ng-style="{'background-color' : selectedMood.color}">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-        <!-- Created with Inkscape (http://www.inkscape.org/) -->
+        <div class="info-col">
+          <h1>{{selectedMood.mood}}</h1>
+          <button class="btn"> Free Write </button>
+          <button class="btn"> Answer Questions </button>
+
+        </div>
         <svg
+           preserveAspectRatio="xMidYMin meet"
            xmlns:dc="http://purl.org/dc/elements/1.1/"
            xmlns:cc="http://creativecommons.org/ns#"
            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -583,5 +588,4 @@
             </g>
           </g>
         </svg>
-        <h1>{{selectedMood.mood}}</h1>
     </div>
