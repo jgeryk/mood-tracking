@@ -1,0 +1,9 @@
+{
+  "name": "mood-tracker",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~4",
+    "path": "~0.12.7"
+  }
+}
