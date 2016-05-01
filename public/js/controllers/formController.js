@@ -2,18 +2,24 @@ angular.module('mood-tracker')
     .controller('formController', function($scope){
       $scope.showFreeWrite = false;
       $scope.showQuestions = false;
+      $scope.mostRecentColor = "";
       $scope.selectedMood = {
-          mood: "",
-          color: ""
+        title: 'Primary Mood',
+        mood: "",
+        color: ""
       }
       $scope.selectedMood2 = {
-          mood: "",
-          color: ""
+        title: 'Secondary Mood',
+        mood: "",
+        color: ""
       }
       $scope.selectedMood3 = {
-          mood: "",
-          color: ""
+        title: 'Tertiary Mood',
+        mood: "",
+        color: ""
       }
+      $scope.moodToChoose = $scope.selectedMood;
+
 
       $scope.toggleFreeWrite = function(){
         $scope.showFreeWrite = !$scope.showFreeWrite;
@@ -51,17 +57,35 @@ angular.module('mood-tracker')
       }
       $scope.color = "rgb(140, 255, 140)"
 
+      $scope.selectColor = function(order){
+        switch(order){
+          case 1:
+            $scope.moodToChoose = $scope.selectedMood;
+            break;
+          case 2:
+            $scope.moodToChoose = $scope.selectedMood2;
+            break;
+          case 3:
+            $scope.moodToChoose = $scope.selectedMood3;
+            break;
+        }
+      }
+
       $scope.selectMood = function(e){
           if(e.target.style.fill){
-              console.log(e);
-              var rgbColor = e.target.style.fill
-              $scope.selectedMood.color = rgbColor;
-              $scope.selectedMood.mood = $scope.moodChart[rgbColor];
-              console.log($scope.selectedMood);
-          } else if(e.target.innerHTML){
-              console.log();
-
+            var rgbColor = e.target.style.fill
+            if($scope.moodChart[rgbColor]){
+              $scope.mostRecentColor = rgbColor;
+              $scope.moodToChoose.color = rgbColor;
+              $scope.moodToChoose.mood = $scope.moodChart[rgbColor];
+            }
           }
+           if(!$scope.selectedMood3.color && $scope.selectedMood.color){
+            $scope.moodToChoose = $scope.selectedMood2.color ? $scope.selectedMood3 : $scope.selectedMood2;
+          }
+          if($scope.selectedMood3.color){
+           $scope.moodToChoose = '';
+         }
       }
 
     });
