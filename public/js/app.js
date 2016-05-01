@@ -1,4 +1,4 @@
-var app = angular.module('mood-tracker', ['ngRoute'])
+var app = angular.module('mood-tracker', ['ngRoute', 'ngTouch'])
   .config(function($routeProvider, $locationProvider){
     $routeProvider
       .when('/', {
