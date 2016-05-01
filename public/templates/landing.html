@@ -1,2 +1,45 @@
-<h1>Mood Tracker</h1>
-<a href ="/setmood"> <button class="btn btn-secondary">Set Mood</button></a>
+<div id="tab_container" ng-controller="landingController">
+  <div id="color-tab" ng-style="monGrad">
+    <div class="btn box-btn">
+      <span class="center">Mon</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="tueGrad">
+    <div class="btn box-btn" >
+      <span class="center">Tue</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="wedGrad">
+    <div class="btn box-btn">
+      <span class="center">Wed</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="thuGrad">
+    <div class="btn box-btn">
+      <span class="center">Thu</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="friGrad">
+    <div class="btn box-btn">
+      <span class="center">Fri</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="satGrad">
+    <div class="btn box-btn">
+      <span class="center">Sat</center>
+    </div>
+  </div>
+  <div id="color-tab" ng-style="sunGrad">
+    <div class="btn box-btn">
+      <span class="center">Sun</center>
+    </div>
+  </div>
+  <div id="color-tab" style="margin-top: 10vmax; animation: breathe 2s ease-in-out infinite alternate">
+	<span id="arrow_slider" class="glyphicon glyphicon-arrow-left" ng-style="condHide"/>
+    <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" id="setMoodView" class="btn box-btn" ng-style="position"/>
+  </div>
+</div>
+
+<img id="graph" class="icon" src="icons/graph_icon.png"/>
+<img id="calendar" class="icon" src="icons/calendar_icon.png"/>
+<img id="settings" class="icon" src="icons/settings_icon.png"/>

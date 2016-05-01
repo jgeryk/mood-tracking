@@ -1,17 +1,114 @@
 body {
-margin:0px;
+  margin:0px;
+  background: -webkit-linear-gradient(bottom, #666666, #BFBFBF 10%, #E5E5D8, #FFFFFF);
+  overflow: hidden;
 }
 
 a {
   color: #00B7FF;
 }
 
-@media (min-width: 900px) {
+#arrow_slider {
+  color: rgba(128,128,128,0.1);
+  font-size: 7vmax;
+  position: absolute;
+  right: 20vw;
+  top: 52.5vh;
+}
+
+.box-btn {
+  display: block;
+  width:9vmax;
+  height:9vmax;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(left, #CCCCCC, #EEEEE0, #EEEEE0, #CCCCCC);
+  box-shadow: -1px -3px 10px -3px black inset;
+  font-size: 2.5vmax;
+  color: #575E61;
+  border: none;
+  margin: 5px;
+}
+
+.center {
+  position: relative;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#color-tab {
+  height: 9.75vmax;
+  border-radius: 10px;
+  width: 96%;
+  margin-top: 0.5vh;
+  margin-left: 2vw;
+  padding-top: 1px;
+}
+
+#color-tab:nth-child .box-btn {
+  position: absolute;
+  right: 3vw;
+}
+
+.icon {
+  height: 30vmin;
+  width: 30vmin;
+  position: absolute;
+  bottom: 3vh;
+}
+
+#graph.icon {
+  left: 2vmax;
+}
+
+#calendar.icon {
+  left: 20vmax;
+}
+
+#settings.icon {
+  left: 38vmax;
+}
+
+#tab_container {
+  margin-top: 2vw;
+}
+
+#setMoodView {
+  float: right;
+}
+
+.btn:active {
+  background: -webkit-linear-gradient(left, #CCCCCC, #EEEEE0, #EEEEE0, #CCCCCC);
+  box-shadow: -1px -3px 10px -3px black inset;
+}
+
+@keyframes breathe {
+  from { background-color: rgba(0,0,0,0);}
+  to   { background-color: rgba(40,40,40,0.15);}
+}
+
+@media screen and (min-device-width: 900px) {
+  #tab_container {
+    height: 70vmin;
+	overflow-y: scroll;
+    margin-right: -1vw;
+  }
+
+  .icon {
+	position: relative;
+	margin-left: 3.8vmax;
+  }
+
+  #arrow_slider {
+    position: relative;
+	top: 10%;
+	right: -75%;
+  }
 
   .info-col {
     position: absolute;
     top: 200px;
     left: 730px;
   }
-
 }
