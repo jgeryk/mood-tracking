@@ -92,7 +92,7 @@ angular.module('mood-tracker')
       $scope.position = { 
         'margin-right': position+"px"
       };
-    }, 25);
+    }, 5);
 
     d.addEventListener('touchstart', function(event) {
       initial = event.targetTouches[0].clientX;
@@ -108,7 +108,7 @@ angular.module('mood-tracker')
       }
 	  
 	  if (position === maxPosition) {
-        $location.path('/setmood');
+        $timeout(function () {$location.path('/setmood'); }, 150);
 	  }
     }, false);
 
@@ -127,7 +127,7 @@ angular.module('mood-tracker')
       }
 
 	  if (position === maxPosition) {
-        $location.path('/setmood');
+        $timeout(function () {$location.path('/setmood'); }, 150);
 	  }
     }, false);
   });
