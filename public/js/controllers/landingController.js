@@ -36,7 +36,7 @@ angular.module('mood-tracker')
       $location.path(path);
     }
 
-    var position = 0;
+    var position = 5;
     var mouseDown;
     var start = false;
     var getMousePos = undefined;
@@ -46,6 +46,9 @@ angular.module('mood-tracker')
       if (angular.isDefined(getMousePos)) return;
       start = true;
       initial = event.clientX;
+      $scope.condHide = {
+        'display': 'none'
+      }
     }
 
     $scope.move = function(event) {
@@ -82,6 +85,8 @@ angular.module('mood-tracker')
         start = false;
         $timeout(function () {$location.path('/setmood'); }, 150);
       }
+
+      $scope.condHide = {}
     };
 
     var d = document.getElementById('setMoodView');
@@ -93,6 +98,9 @@ angular.module('mood-tracker')
 
     d.addEventListener('touchstart', function(event) {
       initial = event.targetTouches[0].clientX;
+      $scope.condHide = {
+        'display': 'none'
+      }
     }, false);
 
     d.addEventListener('touchend', function(event) {
@@ -103,10 +111,12 @@ angular.module('mood-tracker')
       $scope.position = { 
         'margin-right': position+"px"
       }
-	  
-	  if (position === maxPosition) {
+      
+      if (position === maxPosition) {
         $timeout(function () {$location.path('/setmood'); }, 150);
-	  }
+      }
+
+      $scope.condHide = {}
     }, false);
 
     d.addEventListener('touchmove', function(event) {
@@ -123,8 +133,8 @@ angular.module('mood-tracker')
         'margin-right': position+"px"
       }
 
-	  if (position === maxPosition) {
+      if (position === maxPosition) {
         $timeout(function () {$location.path('/setmood'); }, 150);
-	  }
+      }
     }, false);
   });

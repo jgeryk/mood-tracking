@@ -15,10 +15,9 @@ svg {
 #arrow_slider {
   color: rgba(128,128,128,0.1); 
   font-size: 7vmax;
-  position: relative;
-  top: 10%;
-  display: inline-block;
-  right: -60vw;
+  position: absolute;
+  right: 20vw;
+  top: 52.5vh;
 }
 
 .box-btn {
@@ -106,6 +105,8 @@ svg {
   }
 
   #arrow_slider {
-    right: -75vw;
+    position: relative;
+	top: 10%;
+	right: -75%;
   }
 }
