@@ -85,7 +85,6 @@ angular.module('mood-tracker')
     };
 
     $scope.moveToSetMood = function() {
-      //$location.path('/setmood');
     }
 
     var d = document.getElementById('setMoodView');
@@ -93,7 +92,7 @@ angular.module('mood-tracker')
       $scope.position = { 
         'margin-right': position+"px"
       };
-    }, 100);
+    }, 25);
 
     d.addEventListener('touchstart', function(event) {
       initial = event.targetTouches[0].clientX;
@@ -102,11 +101,15 @@ angular.module('mood-tracker')
     d.addEventListener('touchend', function(event) {
       initial = undefined;
       var vmax = Math.max(window.innerWidth, window.innerHeight);
-      var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
+      var maxPosition = window.innerWidth - 0.09*vmax - window.innerWidth*0.04 - 6;
       position = (position < (maxPosition - 0.09*vmax)) ? 5 : maxPosition;
       $scope.position = { 
         'margin-right': position+"px"
       }
+	  
+	  if (position === maxPosition) {
+        $location.path('/setmood');
+	  }
     }, false);
 
     d.addEventListener('touchmove', function(event) {
@@ -116,13 +119,15 @@ angular.module('mood-tracker')
       if (position < 5) position = 5;
 
       var vmax = Math.max(window.innerWidth, window.innerHeight);
-      var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
-
+      var maxPosition = window.innerWidth - 0.09*vmax - window.innerWidth*0.04 - 6;
       if (position > maxPosition) position = maxPosition; 
 
       $scope.position = {
         'margin-right': position+"px"
       }
-    }, false);
 
+	  if (position === maxPosition) {
+        $location.path('/setmood');
+	  }
+    }, false);
   });
