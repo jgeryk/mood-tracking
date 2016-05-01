@@ -1,9 +1,67 @@
 body {
-margin:0px;
+  margin:0px;
+  background: -webkit-linear-gradient(bottom, #666666, #BFBFBF 10%, #E5E5D8, #FFFFFF);
 }
 
 a {
   color: #00B7FF;
 }
+
 svg {
+
+}
+
+.box-btn {
+  display: block;
+  width:9vmax;
+  height:9vmax;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(left, #CCCCCC, #EEEEE0, #EEEEE0, #CCCCCC);
+  box-shadow: -1px -3px 10px -3px black inset;
+  font-size: 2.5vmax;
+  color: #575E61;
+  border: none;
+  margin: 5px;
+}
+
+.center {
+  position: relative;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#color-tab {
+  width: 100%;
+  height: 9.75vmax;
+  border-radius: 10px;
+  width: 96%;
+  margin-top: 0.5vh;
+  margin-left: 2vw;
+  padding-top: 1px;
+}
+
+#color-tab:nth-child .box-btn {
+  position: absolute;
+  right: 3vw;
+}
+
+.icon {
+  height: 30vmin;
+  width: 30vmin;
+  position: fixed !important;
+  bottom: 3vh;
+}
+
+#graph.icon {
+  left: 2vmax;
+}
+
+#calendar.icon {
+  left: 20vmax;
+}
+
+#settings.icon {
+  left: 38vmax;
 }

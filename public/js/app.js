@@ -1,18 +1,17 @@
 var app = angular.module('mood-tracker', ['ngRoute'])
   .config(function($routeProvider, $locationProvider){
     $routeProvider
-    .when('/', {
-           templateUrl : './templates/landing.html',
-           controller: 'landingController'
-       })
-       .when('/setmood', {
-           templateUrl : './templates/plutchik.html',
-           controller: 'formController'
-       })
-       .otherwise({
-           redirectTo: '/'
-       });
+      .when('/', {
+        templateUrl : './templates/landing.html',
+        controller: 'landingController'
+      })
+      .when('/setmood', {
+        templateUrl : './templates/plutchik.html',
+        controller: 'formController'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
 
-       $locationProvider.html5Mode(true);
-
+    $locationProvider.html5Mode(true);
   })
