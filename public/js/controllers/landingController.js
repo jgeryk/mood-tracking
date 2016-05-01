@@ -1,5 +1,5 @@
 angular.module('mood-tracker')
-  .controller('landingController', function($scope, $location, $timeout) {
+  .controller('landingController', function($scope, $location, $timeout, $interval) {
     $scope.monGrad = {
       'display': 'block',
       'background': '-webkit-linear-gradient(left, #BF0000, #FF0000, #BFBF00, #FFFF00)'
@@ -85,15 +85,44 @@ angular.module('mood-tracker')
     };
 
     $scope.moveToSetMood = function() {
-      position = 5;
+      //$location.path('/setmood');
+    }
+
+    var d = document.getElementById('setMoodView');
+    $interval(function () {
+      $scope.position = { 
+        'margin-right': position+"px"
+      };
+    }, 100);
+
+    d.addEventListener('touchstart', function(event) {
+      initial = event.targetTouches[0].clientX;
+    }, false);
+
+    d.addEventListener('touchend', function(event) {
+      initial = undefined;
       var vmax = Math.max(window.innerWidth, window.innerHeight);
       var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
-      for (position = 5; position < maxPosition; position++) {
-        $scope.postition = {
-          'margin-right': position+"px"
-        };
+      position = (position < (maxPosition - 0.09*vmax)) ? 5 : maxPosition;
+      $scope.position = { 
+        'margin-right': position+"px"
       }
-      $location.path('/setmood');
-    }
+    }, false);
+
+    d.addEventListener('touchmove', function(event) {
+      var touch = event.targetTouches[0];
+      position += initial-touch.clientX;
+      initial = touch.clientX;
+      if (position < 5) position = 5;
+
+      var vmax = Math.max(window.innerWidth, window.innerHeight);
+      var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
+
+      if (position > maxPosition) position = maxPosition; 
+
+      $scope.position = {
+        'margin-right': position+"px"
+      }
+    }, false);
 
   });
