@@ -1,10 +1,5 @@
     <div ng-controller="formController" ng-style="{'background-color' : selectedMood.color}">
-        <div class="info-col">
-          <h1>{{selectedMood.mood}}</h1>
-          <button class="btn"> Free Write </button>
-          <button class="btn"> Answer Questions </button>
 
-        </div>
         <svg
            preserveAspectRatio="xMidYMin meet"
            xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -588,4 +583,21 @@
             </g>
           </g>
         </svg>
+        <div class="info-col">
+          <span ng-if="!selectedMood.mood">Please select a mood.</span><br>
+          <button class="btn" ng-if="selectedMood.mood"> Select a secondary mood<br></button>
+          <button class="btn" ng-if="selectedMood2.mood"> Select a tertiary mood<br></button>
+          <button class="btn" ng-click="toggleFreeWrite()"> Free Write </button><br><br>
+          <textarea class="form-control" ng-show="showFreeWrite"></textarea><br>
+          <button class="btn" ng-click="toggleQuestions()"> Answer Questions </button><br><br>
+          <div ng-show="showQuestions">
+            <textarea class="form-control"></textarea><br><br>
+            <textarea class="form-control"></textarea><br><br>
+            <textarea class="form-control"></textarea><br><br>
+            <textarea class="form-control"></textarea><br><br>
+          </div>
+          <span ng-if="selectedMood.mood">Primary mood: {{selectedMood.mood}}</span>
+
+        </div>
+
     </div>

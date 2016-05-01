@@ -14,6 +14,15 @@ angular.module('mood-tracker')
           mood: "",
           color: ""
       }
+
+      $scope.toggleFreeWrite = function(){
+        $scope.showFreeWrite = !$scope.showFreeWrite;
+      }
+
+      $scope.toggleQuestions = function(){
+        $scope.showQuestions = !$scope.showQuestions;
+      }
+
       $scope.moodChart = {
           'rgb(255, 255, 177)'    : 'serenity',
           "rgb(255, 255, 84)"     : 'joy',
