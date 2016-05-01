@@ -1,10 +1,3 @@
-<div ng-show="!showActions" ng-swipe-left="showActions = true">
-  Some list content, like an email in the inbox
-  </div>
-  <div ng-show="showActions" ng-swipe-right="showActions = false">
-    <button ng-click="reply()">Reply</button>
-	  <button ng-click="delete()">Delete</button>
-	  </div>
 <div id="tab_container" ng-controller="landingController">
   <div id="color-tab" ng-style="monGrad">
     <div class="btn box-btn">
@@ -42,7 +35,8 @@
     </div>
   </div>
   <div id="color-tab" style="animation: breathe 2s ease-in-out infinite alternate">
-    <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" id="setMoodView" class="btn box-btn" ng-style="position"/>
+    <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" ng-swipe-left="moveToSetMood()"
+	     id="setMoodView" class="btn box-btn" ng-style="position"/>
   </div>
 </div>
 

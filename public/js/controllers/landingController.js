@@ -83,4 +83,17 @@ angular.module('mood-tracker')
         $timeout(function () {$location.path('/setmood'); }, 150);
       }
     };
+
+    $scope.moveToSetMood = function() {
+      position = 5;
+      var vmax = Math.max(window.innerWidth, window.innerHeight);
+      var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
+      for (position = 5; position < maxPosition; position++) {
+        $scope.postition = {
+          'margin-right': position+"px"
+        };
+      }
+      $location.path('/setmood');
+    }
+
   });
