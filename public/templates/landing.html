@@ -34,9 +34,9 @@
       <span class="center">Sun</center>
     </div>
   </div>
-  <div id="color-tab" style="animation: breathe 2s ease-in-out infinite alternate">
-    <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" ng-swipe-left="moveToSetMood()"
-	     id="setMoodView" class="btn box-btn" ng-style="position"/>
+  <div id="color-tab" style="margin-top: 10vmax; animation: breathe 2s ease-in-out infinite alternate">
+	<span id="arrow_slider" class="glyphicon glyphicon-arrow-left"/>
+    <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" id="setMoodView" class="btn box-btn" ng-style="position"/>
   </div>
 </div>
 

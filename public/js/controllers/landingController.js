@@ -84,9 +84,6 @@ angular.module('mood-tracker')
       }
     };
 
-    $scope.moveToSetMood = function() {
-    }
-
     var d = document.getElementById('setMoodView');
     $interval(function () {
       $scope.position = { 

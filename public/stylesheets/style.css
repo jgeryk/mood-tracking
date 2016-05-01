@@ -12,6 +12,15 @@ svg {
 
 }
 
+#arrow_slider {
+  color: rgba(128,128,128,0.1); 
+  font-size: 7vmax;
+  position: relative;
+  top: 10%;
+  display: inline-block;
+  right: -60vw;
+}
+
 .box-btn {
   display: block;
   width:9vmax;
@@ -94,5 +103,9 @@ svg {
   .icon {
 	position: relative;
 	margin-left: 3.8vmax;
+  }
+
+  #arrow_slider {
+    right: -75vw;
   }
 }
