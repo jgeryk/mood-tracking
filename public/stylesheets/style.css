@@ -1,6 +1,7 @@
 body {
   margin:0px;
   background: -webkit-linear-gradient(bottom, #666666, #BFBFBF 10%, #E5E5D8, #FFFFFF);
+  overflow: hidden;
 }
 
 a {
@@ -50,7 +51,7 @@ svg {
 .icon {
   height: 30vmin;
   width: 30vmin;
-  position: fixed !important;
+  position: absolute;
   bottom: 3vh;
 }
 
@@ -64,4 +65,35 @@ svg {
 
 #settings.icon {
   left: 38vmax;
+}
+
+#tab_container {
+  margin-top: 2vw;
+}
+
+#setMoodView {
+  float: right;
+}
+
+.btn:active {
+  background: -webkit-linear-gradient(left, #CCCCCC, #EEEEE0, #EEEEE0, #CCCCCC);
+  box-shadow: -1px -3px 10px -3px black inset;
+}
+
+@keyframes breathe {
+  from { background-color: rgba(0,0,0,0);}
+  to   { background-color: rgba(40,40,40,0.15);}
+}
+
+@media screen and (min-device-width: 900px) {
+  #tab_container {
+    height: 70vmin;
+	overflow-y: scroll;
+    margin-right: -1vw;
+  }
+
+  .icon {
+	position: relative;
+	margin-left: 3.8vmax;
+  }
 }

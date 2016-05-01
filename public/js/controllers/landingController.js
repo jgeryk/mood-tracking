@@ -1,5 +1,5 @@
 angular.module('mood-tracker')
-  .controller('landingController', function($scope) {
+  .controller('landingController', function($scope, $location, $timeout) {
     $scope.monGrad = {
       'display': 'block',
       'background': '-webkit-linear-gradient(left, #BF0000, #FF0000, #BFBF00, #FFFF00)'
@@ -16,7 +16,8 @@ angular.module('mood-tracker')
     }
 
     $scope.thuGrad = {
-      'display': 'none'
+      'display': 'block',
+      'background': '-webkit-linear-gradient(left, #92BF00, #C3FF00)'
     }
 
     $scope.friGrad = {
@@ -30,4 +31,56 @@ angular.module('mood-tracker')
     $scope.sunGrad = {
       'display': 'none'
     }
+
+    $scope.href = function (path) {
+      $location.path(path);
+    }
+
+    var position = 0;
+    var mouseDown;
+    var start = false;
+    var getMousePos = undefined;
+    var initial;
+
+    $scope.startDrag = function (event) {
+      if (angular.isDefined(getMousePos)) return;
+      start = true;
+      initial = event.clientX;
+    }
+
+    $scope.move = function(event) {
+      if (start) {
+        position += initial-event.clientX;
+        initial = event.clientX;
+        if (position < 5) position = 5;
+
+        var vmax = Math.max(window.innerWidth, window.innerHeight);
+        var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
+
+        if (position > maxPosition) position = maxPosition; 
+
+        $scope.position = {
+          'margin-right': position+"px"
+        }
+        
+        if (position === maxPosition) {
+          start = false;
+          $timeout(function () {$location.path('/setmood'); }, 150);
+        }
+      }
+    }
+
+    $scope.stopDrag = function() {
+      start = false;
+      var vmax = Math.max(window.innerWidth, window.innerHeight);
+      var maxPosition = vmax - 0.09*vmax - window.innerWidth*0.04 - 6;
+      position = (position < (maxPosition - 0.09*vmax)) ? 5 : maxPosition;
+      $scope.position = { 
+        'margin-right': position+"px"
+      }
+      if (position === maxPosition) {
+        start = false;
+        $timeout(function () {$location.path('/setmood'); }, 150);
+      }
+    };
   });
