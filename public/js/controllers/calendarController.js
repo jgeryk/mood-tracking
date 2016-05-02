@@ -40,7 +40,25 @@ angular.module('mood-tracker')
     ]
 
     var currentlyExpanded;
-    $scope.expand = function (event) {
+    $scope.collapse = function() {
+      $scope.hide = {};
+      document.getElementById('collapse_icon').style.display = "none";
+      document.getElementById('calendar_graph').style.display = "none";
+      var hideAgain = document.getElementsByClassName('navigation_arrow');
+      for (var i = 0; i < hideAgain.length; i++) {
+        hideAgain.item(i).style.display = "none";
+      }
+
+      hideAgain = document.getElementsByClassName('expanded_calendar');
+      hideAgain.namedItem(currentlyExpanded).style.display = "none";
+
+      var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+      for (var i = 0; i < currentMarkers.length; i++) {
+        currentMarkers.item(i).style.display="none";
+      }
+    }
+
+    $scope.expand = function () {
       $scope.hide = {
         'display' : 'none'
       }
@@ -49,7 +67,13 @@ angular.module('mood-tracker')
       expandThat.namedItem(passUp.context.id).style.display = "";
       expandThat = document.getElementsByClassName('navigation_arrow');
       for (var i = 0; i < expandThat.length; i++) {
-        expandThat.item(i).style.display="";
+        expandThat.item(i).style.display = "";
+      }
+      document.getElementById('collapse_icon').style.display="";
+      document.getElementById('calendar_graph').style.display="";
+      var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+      for (var i = 0; i < currentMarkers.length; i++) {
+        currentMarkers.item(i).style.display="";
       }
     }
     
@@ -68,7 +92,7 @@ angular.module('mood-tracker')
         var vOff = height/7.8 + (vNum-1)*height/6.9;
         var hNum = Math.floor((e.pageX-offset.left) / (width/7));
 
-        if ($(this).context.className.includes("expanded_")) {
+        if ($(this).context.className.includes("expanded_") && vNum !== 0) {
           var newDiv = document.createElement("div");
           var newMarker = document.createElement("img");
           newDiv.style.display = 'block'
@@ -77,7 +101,7 @@ angular.module('mood-tracker')
           newDiv.style.top     = offset.top + vOff;
           newDiv.style.left    = offset.left + width/7 * hNum;
           newDiv.style.position = 'absolute';
-          newDiv.id = $(this).context.id;
+          newDiv.className = $(this).context.id + "_marker";
           newDiv.addEventListener('click', function () {
             document.getElementsByTagName('body')[0].removeChild(this);
           });
@@ -96,7 +120,18 @@ angular.module('mood-tracker')
           expandThat.namedItem(currentlyExpanded).style.display = "none";
           var nextMonth = (months.indexOf(currentlyExpanded) < 11) ? months.indexOf(currentlyExpanded)+1 : 0;
           expandThat.namedItem(months[nextMonth]).style.display="";
+
+          // Hide all the current markers, do not delete them and restore them
+          var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+          for (var i = 0; i < currentMarkers.length; i++) {
+            currentMarkers.item(i).style.display="none";
+          }
+
           currentlyExpanded = months[nextMonth];
+          var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+          for (var i = 0; i < currentMarkers.length; i++) {
+            currentMarkers.item(i).style.display="";
+          }
 
         } else if ($(this).context.id === "left") {
 
@@ -104,8 +139,18 @@ angular.module('mood-tracker')
           expandThat.namedItem(currentlyExpanded).style.display = "none";
           var nextMonth = (months.indexOf(currentlyExpanded) > 0) ? months.indexOf(currentlyExpanded)-1 : 11;
           expandThat.namedItem(months[nextMonth]).style.display="";
-          currentlyExpanded = months[nextMonth];
 
+          // Hide all the current markers, do not delete them and restore them
+          var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+          for (var i = 0; i < currentMarkers.length; i++) {
+            currentMarkers.item(i).style.display="none";
+          }
+
+          currentlyExpanded = months[nextMonth];
+          var currentMarkers = document.getElementsByClassName(currentlyExpanded + "_marker");
+          for (var i = 0; i < currentMarkers.length; i++) {
+            currentMarkers.item(i).style.display="";
+          }
         }
       });
     });

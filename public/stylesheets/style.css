@@ -44,12 +44,30 @@ a {
   margin-top: 1.5vh;
 }
 
+#calendar_graph {
+  position: absolute;
+  width: 10vw;
+  right: 7vw;
+  top: 6.5%;
+}
+
+#calendar.icon {
+  left: 20vmax;
+}
+
 .center {
   position: relative;
   top: 30%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+#collapse_icon {
+  position: absolute;
+  width: 6vw;
+  left: 8vw;
+  top: 10.5%;
 }
 
 #color-tab {
@@ -75,10 +93,6 @@ a {
 
 #graph.icon {
   left: 2vmax;
-}
-
-#calendar.icon {
-  left: 20vmax;
 }
 
 #left {
