@@ -89,6 +89,14 @@ angular.module('mood-tracker')
       $scope.condHide = {}
     };
 
+    $scope.go = function(path) {
+	  if (window.innerWidth > 1000) {
+	    $location.path(path);
+	  } else {
+	    $location.path('/m'+path);
+	  }
+    }
+
     var d = document.getElementById('setMoodView');
     $interval(function () {
       $scope.position = { 
