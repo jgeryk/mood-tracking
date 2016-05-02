@@ -44,12 +44,30 @@ a {
   margin-top: 1.5vh;
 }
 
+#calendar_graph {
+  position: absolute;
+  width: 10vw;
+  right: 7vw;
+  top: 6.5%;
+}
+
+#calendar.icon {
+  left: 20vmax;
+}
+
 .center {
   position: relative;
   top: 30%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+#collapse_icon {
+  position: absolute;
+  width: 6vw;
+  left: 8vw;
+  top: 10.5%;
 }
 
 #color-tab {
@@ -59,6 +77,11 @@ a {
   margin-top: 0.5vh;
   margin-left: 2vw;
   padding-top: 1px;
+}
+
+.expanded_calendar {
+  margin: 2vh 17vw;
+  width: 65vw;
 }
 
 .icon {
@@ -72,20 +95,33 @@ a {
   left: 2vmax;
 }
 
-#calendar.icon {
-  left: 20vmax;
+#left {
+  left: 6vw;
+  top: 42.5%;
+  transform: rotate(-90deg);
+}
+
+.navigation_arrow {
+  position: absolute;
+  width: 10vw;
+}
+
+#right {
+  transform: rotate(90deg);
+  right: 7vw;
+  top: 42.5%;
 }
 
 #settings.icon {
   left: 38vmax;
 }
 
-#tab_container {
-  margin-top: 2vw;
-}
-
 #setMoodView {
   float: right;
+}
+
+#tab_container {
+  margin-top: 2vw;
 }
 
 .btn:active {
@@ -152,6 +188,10 @@ a {
     width: 20vw;
     margin-top: 3vh;
     margin-right: -3vw;
+  }
+
+  .calendar:nth-child(odd) {
+    margin-left: 0px;
   }
 
   .info-col {
