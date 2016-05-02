@@ -593,17 +593,24 @@
           <br>
           <span ng-if="selectedMood2.mood">Tertiary mood:</span>
           <div ng-if="selectedMood3.color" class="selected-color" ng-click="selectColor(3)" ng-style="{'background-color' : selectedMood3.color}"> {{selectedMood3.mood}}<br></div>
+          <br><button class="btn " ng-click="toggleFreeWrite()">Free Write </button><br>
+          <textarea class="form-control" ng-show="showFreeWrite"></textarea><br>
+          <button class="btn " ng-click="toggleQuestions()"> Answer Questions </button><br><br>
+          <div ng-if="showQuestions">
+            What happened/What's Happening?
+            <textarea class="form-control"></textarea>
+            Please enter any places involved, separated by commas.
+            <textarea class="form-control"></textarea>
+            Please enter any people involved, separated by commas.
+            <textarea class="form-control"></textarea>
+            Please enter any objects involved, separated by commas.
+            <textarea class="form-control"></textarea>
+            Please enter any miscellanious thoughts pertaining to your emotional state.
+            <textarea class="form-control"></textarea>
+          </div>
+          <button ng-if="selectedMood.mood" class="btn" ng-click="toggleQuestions()"> Submit Mood Entry </button><br><br>
         </div>
-        <br><button class="btn col-lg-2 col-xs-12" ng-click="toggleFreeWrite()">Free Write </button><br>
-        <textarea class="form-control col-lg-2 col-xs-12" ng-show="showFreeWrite"></textarea><br>
-        <button class="btn col-lg-2 col-xs-12" ng-click="toggleQuestions()"> Answer Questions </button><br><br>
-        <div ng-if="showQuestions">
-          <textarea class="form-control col-xs-12"></textarea><br><br>
-          <textarea class="form-control"></textarea><br><br>
-          <textarea class="form-control"></textarea><br><br>
-          <textarea class="form-control"></textarea><br><br>
-        </div>
-        <button class="btn" ng-click="toggleQuestions()"> Submit Mood Entry </button><br><br>
+
 
 
     </div>

@@ -83,6 +83,7 @@ a {
   box-shadow: -1px -3px 10px -3px black inset;
 }
 
+
 @keyframes breathe {
   from { background-color: rgba(0,0,0,0);}
   to   { background-color: rgba(40,40,40,0.15);}
@@ -124,7 +125,13 @@ a {
 
   .info-col {
     position: absolute;
-    top: 200px;
+    top: 10px;
     left: 730px;
+  }
+
+  .free-write {
+    margin-top: 10px;
+    height: 200px;
+    width: 450px;
   }
 }
