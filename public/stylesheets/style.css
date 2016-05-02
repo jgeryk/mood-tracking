@@ -18,7 +18,7 @@ a {
 
 #back_btn {
   width: 60px;
-  margin: 20px 00px 0px 20px;
+  margin: 20px 0px -40px 20px;
 }
 
 .box-btn {
@@ -35,7 +35,7 @@ a {
 }
 
 .calendar:nth-child(odd) {
-  margin-left: 3vw;
+  margin-left: 2.8vw;
   margin-right: 3vw;
 }
 
