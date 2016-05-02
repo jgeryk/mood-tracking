@@ -16,6 +16,11 @@ a {
   top: 52.5vh;
 }
 
+#back_btn {
+  width: 60px;
+  margin: 20px 0px -40px 20px;
+}
+
 .box-btn {
   display: block;
   width:9vmax;
@@ -27,6 +32,16 @@ a {
   color: #575E61;
   border: none;
   margin: 5px;
+}
+
+.calendar:nth-child(odd) {
+  margin-left: 2.8vw;
+  margin-right: 3vw;
+}
+
+.calendar {
+  width: 46vw;
+  margin-top: 1.5vh;
 }
 
 .center {
@@ -44,11 +59,6 @@ a {
   margin-top: 0.5vh;
   margin-left: 2vw;
   padding-top: 1px;
-}
-
-#color-tab:nth-child .box-btn {
-  position: absolute;
-  right: 3vw;
 }
 
 .icon {
@@ -101,26 +111,39 @@ a {
   margin-bottom: 10px;
   padding-top: 5px;
 }
+
 .info-col {
   font-size: 24px;
   font-weight: bold;
 }
+
 @media screen and (min-device-width: 900px) {
   #tab_container {
     height: 70vmin;
-	  overflow-y: scroll;
+    overflow-y: scroll;
     margin-right: -1vw;
   }
 
   .icon {
-	position: relative;
-	margin-left: 3.8vmax;
+    position: relative;
+    margin-left: 3.8vmax;
   }
 
   #arrow_slider {
     position: relative;
-	top: 10%;
-	right: -75%;
+    top: 10%;
+    right: -75%;
+  }
+
+  #custom.col-md-3 {
+    width: 22%;
+    height: 100%;
+  }
+  
+  .calendar {
+    width: 20vw;
+    margin-top: 3vh;
+    margin-right: -3vw;
   }
 
   .info-col {

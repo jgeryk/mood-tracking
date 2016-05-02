@@ -39,7 +39,6 @@
     <div ng-mousedown="startDrag($event)" ng-mousemove="move($event)" ng-mouseup="stopDrag()" id="setMoodView" class="btn box-btn" ng-style="position"/>
   </div>
 </div>
-
 <img id="graph" class="icon" src="icons/graph_icon.png"/>
-<img id="calendar" class="icon" src="icons/calendar_icon.png"/>
+<img id="calendar" ng-click="go('/calendar')" class="icon" src="icons/calendar_icon.png"/>
 <img id="settings" class="icon" src="icons/settings_icon.png"/>

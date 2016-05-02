@@ -89,6 +89,14 @@ angular.module('mood-tracker')
       $scope.condHide = {}
     };
 
+    $scope.go = function(path) {
+	  if (window.innerWidth > 1000) {
+	    $location.path(path);
+	  } else {
+	    $location.path('/m'+path);
+	  }
+    }
+
     var d = document.getElementById('setMoodView');
     $interval(function () {
       $scope.position = { 
@@ -128,10 +136,6 @@ angular.module('mood-tracker')
       var vmax = Math.max(window.innerWidth, window.innerHeight);
       var maxPosition = window.innerWidth - 0.09*vmax - window.innerWidth*0.04 - 6;
       if (position > maxPosition) position = maxPosition; 
-
-      $scope.position = {
-        'margin-right': position+"px"
-      }
 
       if (position === maxPosition) {
         $timeout(function () {$location.path('/setmood'); }, 150);

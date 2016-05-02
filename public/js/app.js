@@ -9,6 +9,14 @@ var app = angular.module('mood-tracker', ['ngRoute', 'ngTouch'])
         templateUrl : './templates/plutchik.html',
         controller: 'formController'
       })
+      .when('/calendar', {
+        templateUrl : './templates/calendar.html',
+        controller: 'calendarController'
+      })
+      .when('/m/calendar', {
+        templateUrl : './templates/m_calendar.html',
+        controller: 'calendarController'
+      })
       .otherwise({
         redirectTo: '/'
       });
