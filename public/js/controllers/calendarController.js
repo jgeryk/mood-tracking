@@ -19,7 +19,7 @@ angular.module('mood-tracker')
       var touch = event.targetTouches[0];
       position -= initial-touch.clientY;
       initial = touch.clientY;
-      var maxH = -window.innerHeight * 0.28;
+      var maxH = -window.innerHeight * 0.29;
       if (position > 0) position = 20;
       if (position < maxH) position = maxH;
     
