@@ -117,6 +117,14 @@ a {
   font-weight: bold;
 }
 
+.fa-undo {
+  color: black;
+  font-size: 34px;
+}
+
+.btn{
+  margin-bottom: 5px;
+}
 @media screen and (min-device-width: 900px) {
   #tab_container {
     height: 70vmin;
@@ -139,7 +147,7 @@ a {
     width: 22%;
     height: 100%;
   }
-  
+
   .calendar {
     width: 20vw;
     margin-top: 3vh;

@@ -1,4 +1,5 @@
-    <div ng-controller="formController" ng-style="{'background-color' : mostRecentColor}">
+    <div ng-controller="formController" ng-style="{'background-color' : mostRecentColor}" class="overflowed">
+      <a href="/"><i class="fa fa-undo back-btn" aria-hidden="true"></i></a>
 
         <svg
            preserveAspectRatio="xMidYMin meet"
@@ -584,18 +585,16 @@
           </g>
         </svg>
         <div class="info-col">
-          <span ng-if="moodToChoose">Select a {{ moodToChoose.title}}</span><br>
-          <span ng-if="selectedMood.mood">Primary mood: </span>
+          <span ng-if="moodToChoose">Select a {{ moodToChoose.title}}</span>
+          <span ng-if="selectedMood.mood"><br>Primary mood: </span>
           <div ng-if="selectedMood.color" class="selected-color"  ng-click="selectColor(1)" ng-style="{'background-color' : selectedMood.color}">{{selectedMood.mood}}<br></div>
-          <br>
-          <span ng-if="selectedMood2.mood">Secondary mood:</span>
+          <span ng-if="selectedMood2.mood"><br>Secondary mood:</span>
           <div ng-if="selectedMood2.color" class="selected-color"  ng-click="selectColor(2)" ng-style="{'background-color' : selectedMood2.color}">{{selectedMood2.mood}}<br></div>
-          <br>
-          <span ng-if="selectedMood2.mood">Tertiary mood:</span>
+          <span ng-if="selectedMood2.mood"><br>Tertiary mood:</span>
           <div ng-if="selectedMood3.color" class="selected-color" ng-click="selectColor(3)" ng-style="{'background-color' : selectedMood3.color}"> {{selectedMood3.mood}}<br></div>
-          <br><button class="btn " ng-click="toggleFreeWrite()">Free Write </button><br>
-          <textarea class="form-control" ng-show="showFreeWrite"></textarea><br>
-          <button class="btn " ng-click="toggleQuestions()"> Answer Questions </button><br><br>
+          <br><button class="btn " ng-click="toggleFreeWrite()">Free Write <br></button>
+          <textarea class="form-control" ng-show="showFreeWrite"></textarea>
+          <button class="btn " ng-click="toggleQuestions()">Answer Questions </button><br>
           <div ng-if="showQuestions">
             What happened/What's Happening?
             <textarea class="form-control"></textarea>
@@ -608,7 +607,7 @@
             Please enter any miscellanious thoughts pertaining to your emotional state.
             <textarea class="form-control"></textarea>
           </div>
-          <button ng-if="selectedMood.mood" class="btn" ng-click="toggleQuestions()"> Submit Mood Entry </button><br><br>
+          <a href="/"><button ng-if="selectedMood.mood" class="btn" ng-click="toggleQuestions()"> Submit Mood Entry </button></a><br><br>
         </div>
 
 
