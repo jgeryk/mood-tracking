@@ -1,23 +1,41 @@
-<div class="col-md-3" id="custom">
-  <img class="calendar" src="calendars/january.png"/>
-  <img class="calendar" src="calendars/may.png"/>
-  <img class="calendar" src="calendars/september.png"/>
+<div style="border: 2px red solid; position: absolute; display: none" ng-style="highlight"/>
+<div style="margin-left: 5.5vw; width: 100%; height: 100%" ng-style="hide">
+  <div class="col-md-3" id="custom">
+    <img id="january"   class="calendar" src="calendars/january.png" ng-click="expand(this)"/>
+    <img id="may"       class="calendar" src="calendars/may.png"/>
+    <img id="september" class="calendar" src="calendars/september.png"/>
+  </div>
+
+  <div class="col-md-3" id="custom">
+    <img id="february" class="calendar" src="calendars/february.png"/>
+    <img id="june"     class="calendar" src="calendars/june.png"/>
+    <img id="october"  class="calendar" src="calendars/october.png"/>
+  </div>
+
+  <div class="col-md-3" id="custom">
+    <img id="march"    class="calendar" src="calendars/march.png"/>
+    <img id="july"     class="calendar" src="calendars/july.png"/>
+    <img id="november" class="calendar" src="calendars/november.png"/>
+  </div>
+
+  <div class="col-md-3" id="custom">
+    <img id="april"    class="calendar" src="calendars/april.png"/>
+    <img id="august"   class="calendar" src="calendars/august.png"/>
+    <img id="december" class="calendar" src="calendars/december.png"/>
+  </div>
 </div>
 
-<div class="col-md-3" id="custom">
-  <img class="calendar" src="calendars/february.png"/>
-  <img class="calendar" src="calendars/june.png"/>
-  <img class="calendar" src="calendars/october.png"/>
-</div>
-
-<div class="col-md-3" id="custom">
-  <img class="calendar" src="calendars/march.png"/>
-  <img class="calendar" src="calendars/july.png"/>
-  <img class="calendar" src="calendars/november.png"/>
-</div>
-
-<div class="col-md-3" id="custom">
-  <img class="calendar" src="calendars/april.png"/>
-  <img class="calendar" src="calendars/august.png"/>
-  <img class="calendar" src="calendars/december.png"/>
-</div>
+<img id="january"   class="expanded_calendar" src="calendars/january.png" style="display: none"/>
+<!--
+<img id="february"  class="expanded_calendar" src="calendars/february.png"/>
+<img id="march"     class="expanded_calendar" src="calendars/march.png"/>
+<img id="april"     class="expanded_calendar" src="calendars/april.png"/>
+<img id="may"       class="expanded_calendar" src="calendars/may.png"/>
+<img id="june"      class="expanded_calendar" src="calendars/june.png"/>
+<img id="july"      class="expanded_calendar" src="calendars/july.png"/>
+<img id="august"    class="expanded_calendar" src="calendars/august.png"/>
+<img id="september" class="expanded_calendar" src="calendars/september.png"/>
+<img id="october"   class="expanded_calendar" src="calendars/october.png"/> 
+<img id="november"  class="expanded_calendar" src="calendars/november.png"/>
+<img id="december"  class="expanded_calendar" src="calendars/december.png"/>
+-->

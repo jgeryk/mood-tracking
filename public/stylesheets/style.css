@@ -61,6 +61,11 @@ a {
   padding-top: 1px;
 }
 
+.expanded_calendar {
+  margin: 2vh 17vw;
+  width: 65vw;
+}
+
 .icon {
   height: 30vmin;
   width: 30vmin;
@@ -143,6 +148,10 @@ a {
     width: 20vw;
     margin-top: 3vh;
     margin-right: -3vw;
+  }
+
+  .calendar:nth-child(odd) {
+    margin-left: 0px;
   }
 
   .info-col {
