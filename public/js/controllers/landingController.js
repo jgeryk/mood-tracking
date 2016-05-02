@@ -137,10 +137,6 @@ angular.module('mood-tracker')
       var maxPosition = window.innerWidth - 0.09*vmax - window.innerWidth*0.04 - 6;
       if (position > maxPosition) position = maxPosition; 
 
-      $scope.position = {
-        'margin-right': position+"px"
-      }
-
       if (position === maxPosition) {
         $timeout(function () {$location.path('/setmood'); }, 150);
       }
